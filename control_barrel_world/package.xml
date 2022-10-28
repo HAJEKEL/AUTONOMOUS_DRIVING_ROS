@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package>
+  <name>control_barrel_world</name>
+  <version>0.0.1</version>
+  <description>
+    Package containing the node "control_barrel_world" to control the vehicle, by subscribing to 3D barrel detections and 2D person detections and publishing control messages. 
+  </description>
+  <maintainer email="h.a.jekel@student.tudelft.nl">
+    H.A. Jekel
+  </maintainer>
+  <license>TODO</license>
+  <buildtool_depend>catkin</buildtool_depend>
+
+</package>

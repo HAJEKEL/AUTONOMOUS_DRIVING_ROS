@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package>
+  <name>pcl_obstacle_detector</name>
+  <version>0.0.1</version>
+  <description>
+    Package that contains the node "pcl_obstacle_detector_node" to detect 3D bounding boxes of all barrels in the lidar pointcloud using PCl. 
+  </description>
+  <maintainer email="h.a.jekel@student.tudelft.nl">
+    H.A. Jekel
+  </maintainer>
+  <license>TODO</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  
+</package>
