@@ -1,3 +1,4 @@
+"markdown.preview.linkify": false 
 # Description and instructions
 #### Course title: RO47003 Robot Software Practicals (2022/23 Q1)
 #### Name: Henk Jekel 
