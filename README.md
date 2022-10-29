@@ -15,24 +15,24 @@ The "opencv_person_detector" package has a node called "opencv_person_detector_n
 The "pcl_obstacle_detector" package contains a  node called "pcl_obstacle_detector_node" that:
 1. Subscribes to the point cloud topic "/point_cloud" with a "queue_size" of 1, ensuring that the data is processed in near real time. 
 2. Removes the ground plane from the received point cloud and uses euclidean cluster extraction to find clusters (mainly barrels) in the remaining point cloud. The clusters are extracted using the following parameters:
--   Cluster tolerance = 0.5
--   Minimum cluster size = 10
--   Maximum cluster size = 25000
+    -   Cluster tolerance = 0.5
+    -   Minimum cluster size = 10
+    -   Maximum cluster size = 25000
 3. Publishes the clusters as a 3D bounding boxes by assigning the cluster center to the "center.position.center" field and using the extrema of the cluster to fill the "bbox.size" field of the message of type "vision_msgs/Detection3DArray" to the topic "/pcl_obstacle_detector_node/detections"
 
 #### "control_barrel_world" package:
 The "control_barrel_world" package contains a node called "control_barrel_world_node" that:
 1. Subscribes to both "/opencv_person_detector_node/detections" and "/pcl_obstacle_detector_node/detections"
 2. Implements a control algorithm to:
--   Filter the 3D obstacle detections to save only the detections in front of the car and within a radius of four meters.
--   Drive forward when the filtered set is empty.
--   Obtain the closest detection when the filtered set is not empty and steer accordingly
--   Stop in case a person detection is larger that 25000 pixels 
+    -   Filter the 3D obstacle detections to save only the detections in front of the car and within a radius of four meters.
+    -   Drive forward when the filtered set is empty.
+    -   Obtain the closest detection when the filtered set is not empty and steer accordingly
+    -   Stop in case a person detection is larger that 25000 pixels 
 3. Publishes "prius_msgs/Control" messages to the topic "/prius". 
 4. Contains a launch file called "solution.launch" to run the full solution. The launch file:
--   Includes the car_simulation/launch/simulation_barrel_world.launch file
--   Runs the node "pcl_obstacle_detector_node"
--   Runs the node "control_barrel_world_node"
+    -   Includes the car_simulation/launch/simulation_barrel_world.launch file
+    -   Runs the node "pcl_obstacle_detector_node"
+    -   Runs the node "control_barrel_world_node"
 ## Build instructions: 
 To build the solution run the following command lines inside the singularity container (without $):
 -   $ source /opt/ros/noetic/setup.sh
@@ -45,6 +45,7 @@ To build the solution run the following command lines inside the singularity con
 -   $ cd ..
 -   $ catkin_make
 ## Run instructions: 
--   source devel/setup.sh
--   roslaunch control_barrel_world solution.launch
+To run the solution run the following command lines inside the singularity container (without $):
+-   $ source devel/setup.sh
+-   $ roslaunch control_barrel_world solution.launch
 
