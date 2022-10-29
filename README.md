@@ -41,8 +41,8 @@ To build the solution run the following command lines inside the singularity con
 -   $ mkdir -p catkin_ws/src
 -   $ cd catkin_ws/src
 -   $ catkin_init_workspace
--   $ git clone git@gitlab.ro47003.3me.tudelft.nl:students-2223/lab4/group101.git
--   $ git clone git@gitlab.ro47003.3me.tudelft.nl:students-2223/ro47003_simulator.git
+-   $ git clone <div style="display: inline">git@gitlab.ro47003.3me.tudelft.nl:students-2223/lab4/group101.git</div>
+-   $ git clone <div style="display: inline">git@gitlab.ro47003.3me.tudelft.nl:students-2223/ro47003_simulator.git</div>
 -   $ cd ..
 -   $ catkin_make
 ## Run instructions: 
