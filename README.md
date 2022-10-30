@@ -3,11 +3,11 @@
 #### Name: Henk Jekel 
 #### Date: 30/10/2022
 ## Short description of the task and how this repository will address it: 
-This software allows a virtual controllable Prius vehicle to drive autonomously through a simulated test track outlined by cones. The software uses the vehicles sensors to detect obstacles and pedestrians. It then uses these detections to generate control instructions that prevent the vehicle from hitting any cones or pedestrians. The software contains two packages called `pcl_obstacle_detector` and `control_barrel_world`. 
+This software allows a virtual controllable Prius vehicle to drive autonomously through a simulated test track outlined by cones. The software uses the vehicles sensors to detect obstacles and pedestrians. It then uses these detections to generate control instructions that prevent the vehicle from hitting any cones or pedestrians. The software contains two packages called `pcl_obstacle_detector` and `control_barrel_world`.
 ## Short desciption of the packages their nodes and the launch file:
 #### "pcl_obstacle_detector" package:
 The `pcl_obstacle_detector` package contains a  node called `pcl_obstacle_detector_node` that:
-1. Subscribes to the point cloud topic `/point_cloud` with a "queue_size" of 1, ensuring that the data is processed in near real time. 
+1. Subscribes to the point cloud topic `/point_cloud` with a "queue_size" of 1, ensuring that the data is processed in near real time.
 2. Removes the ground plane from the received point cloud with the RANSAC algorithm and uses euclidean cluster extraction to find clusters (mainly barrels) in the remaining point cloud. The clusters are extracted using the following parameters:
     -   Cluster tolerance = 0.5
     -   Minimum cluster size = 10

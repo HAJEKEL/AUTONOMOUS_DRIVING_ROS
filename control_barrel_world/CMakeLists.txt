@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 2.8.3)
 project(control_barrel_world)
 
 # Find the catkin build system, and any other packages on which we depend.
-find_package(catkin REQUIRED COMPONENTS roscpp geometry_msgs turtlesim std_srvs)
+find_package(catkin REQUIRED COMPONENTS roscpp sensor_msgs pcl_ros pcl_conversions vision_msgs prius_msgs)
 
 # Declare our catkin package.
 catkin_package()
@@ -14,12 +14,7 @@ catkin_package()
 include_directories(include ${catkin_INCLUDE_DIRS})
 
 # Declare the executable, along with its source files.
-add_executable(hello hello.cpp)
-add_executable(pubvel pubvel.cpp)
-add_executable(subpose subpose.cpp)
-add_executable(count count.cpp)
+add_executable(${PROJECT_NAME}_node src/control_barrel_world.cpp src/main.cpp)
+
 # Specify libraries against which to link.
-target_link_libraries(hello ${catkin_LIBRARIES})
-target_link_libraries(pubvel ${catkin_LIBRARIES})
-target_link_libraries(subpose ${catkin_LIBRARIES})
-target_link_libraries(count ${catkin_LIBRARIES})
+target_link_libraries(${PROJECT_NAME}_node ${catkin_LIBRARIES})

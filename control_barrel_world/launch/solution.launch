@@ -1,1 +1,24 @@
-this is the solution.launch launch file
+<launch>
+    <include
+    file="$(find car_simulation)/launch/simulation_barrel_world.launch"/>
+
+    <node
+        pkg="control_barrel_world"
+        type="control_barrel_world_node"
+        name="control_barrel_world_node"
+        output ="screen"
+        launch-prefix = "xterm -e"
+        required = "true"
+    />
+   
+    <node
+        pkg="pcl_obstacle_detector"
+        type="pcl_obstacle_detector_node"
+        name="pcl_obstacle_detector_node"
+        launch-prefix="xterm -e"
+        output ="screen"
+        required="true"
+    />
+
+</launch>
+
