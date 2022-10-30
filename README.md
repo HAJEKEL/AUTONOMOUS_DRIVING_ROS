@@ -37,20 +37,20 @@ The `control_barrel_world` package contains a node called `control_barrel_world_
 To build the solution run the following command lines inside the singularity container (without $):
 
 ```
-source /opt/ros/noetic/setup.sh
-cd ~
-mkdir -p catkin_ws/src
-cd catkin_ws/src
-catkin_init_workspace
-git clone git@gitlab.ro47003.3me.tudelft.nl:students-2223/lab4/group101.git
-git clone git@gitlab.ro47003.3me.tudelft.nl:students-2223/ro47003_simulator.git
-cd ..
-catkin_make
+$ source /opt/ros/noetic/setup.sh
+$ cd ~
+$ mkdir -p catkin_ws/src
+$ cd catkin_ws/src
+$ catkin_init_workspace
+$ git clone git@gitlab.ro47003.3me.tudelft.nl:students-2223/lab4/group101.git
+$ git clone git@gitlab.ro47003.3me.tudelft.nl:students-2223/ro47003_simulator.git
+$ cd ..
+$ catkin_make
 ```
 
 ## Run instructions: 
 To run the solution run the following command lines inside the singularity container (without $):
 
-    source devel/setup.sh
-    roslaunch control_barrel_world solution.launch
+    $ source devel/setup.sh
+    $ roslaunch control_barrel_world solution.launch
 
