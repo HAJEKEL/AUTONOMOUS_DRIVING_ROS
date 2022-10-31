@@ -34,5 +34,10 @@ int main(int argc, char **argv) {
   PclObstacleDetector pcl;
 
   // Let ROS take over
-  ros::spin();
+  ros::Rate rate(30);  // Hz rate
+  while (ros::ok()) {
+    // Let Ros take over
+    ros::spinOnce();
+    rate.sleep();
+  }
 }

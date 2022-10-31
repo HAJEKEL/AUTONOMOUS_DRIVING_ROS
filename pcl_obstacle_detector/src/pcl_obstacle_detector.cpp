@@ -26,7 +26,7 @@
 // Defining the constructor that initializes all data members of the class
 PclObstacleDetector::PclObstacleDetector() {
   lidar_sub =
-      nh.subscribe("point_cloud", 1000, &PclObstacleDetector::callback, this);
+      nh.subscribe("point_cloud", 1, &PclObstacleDetector::callback, this);
 
   obstacle_pub = nh.advertise<vision_msgs::Detection3DArray>(
       "pcl_obstacle_detector_node/detections", 1);
@@ -57,6 +57,9 @@ void PclObstacleDetector::callback(
   Eigen::Vector4f centroid;
   Eigen::Vector4f min;
   Eigen::Vector4f max;
+
+  // Convert ROS pointcloud to PCL
+  pcl::fromROSMsg(*msg, *cloud);
 
   // Filter points cloud
 
@@ -120,7 +123,11 @@ void PclObstacleDetector::callback(
     cloud_cluster->width = cloud_cluster->size();
     cloud_cluster->height = 1;
     cloud_cluster->is_dense = true;
-
+    std::cout << "Cluster has been detected with: " << cloud_cluster->size()
+              << " data points." << std::endl;
+    std::stringstream ss;
+    ss << "cloud_cluster_" << j << ".pcd";
+    writer.write<pcl::PointXYZ>(ss.str(), *cloud_cluster, false);  //*
     pcl::compute3DCentroid(*cloud_cluster, centroid);
     pcl::getMinMax3D(*cloud_cluster, min, max);
     detections3D.header = msg->header;

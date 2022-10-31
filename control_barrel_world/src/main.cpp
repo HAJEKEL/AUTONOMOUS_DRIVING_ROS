@@ -19,7 +19,7 @@ int main(int argc, char **argv) {
 
   ControlBarrelWorldNode control;  // Call the class
 
-  ros::Rate rate(50);  // Hz rate
+  ros::Rate rate(10);  // Hz rate
   while (ros::ok()) {
     // Let Ros take over
     ros::spinOnce();
