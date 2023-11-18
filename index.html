@@ -1,0 +1,207 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Pathfinder Prius: Navigating the Future with ROS-Powered Autonomous Driving</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+    <style>
+        /* Center the video */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 30vh; /* Adjust this value for the desired height */
+        }
+
+        /* Style the iframe */
+        .video-container iframe {
+            width: 560px; /* Adjust the width as needed */
+            height: 315px; /* Adjust the height as needed */
+        }
+    </style>
+
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper" class="fade-in">
+
+        <!-- Intro -->
+        <div id="intro">
+            <h1>Pathfinder Prius:
+                </h1>
+            <h2>Navigating the Future with ROS-Powered Autonomous Driving</h2>
+            <p>
+                <a href="https://www.linkedin.com/in/henk-jekel-748054259/" target="_blank">
+                    <img src="images/linkedin_icon.png" alt="LinkedIn Pictogram" width="35" height="35">
+                </a>
+                <a href="https://github.com/HAJEKEL/pt.darts" target="_blank">
+                    <img src="images/github_icon.png" alt="Github Pictogram" width="35" height="35">
+                </a>
+                <a href="mailto:hendrikjekel@gmail.com" target="_blank">
+                    <img src="images/gmail_icon.png" alt="Gmail Pictogram" width="35" height="35">
+                </a>
+            </p>
+            <ul class="actions">
+                <li>
+                    <h4>Keep reading to learn more</h4>
+                    <a href="#nav" class="button icon solid solo fa-arrow-down scrolly">Continue</a>
+                </li>
+            </ul>
+        </div>
+
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul class="links">
+                <li class="active">
+                    <a href="https://hajekel.github.io/">
+                        <span style="font-size: 35px;">&larr;</span> Back to portfolio
+                    </a>
+                </li>
+            </ul>
+
+
+
+
+            <ul class="icons">
+                <li><a href="https://www.linkedin.com/in/henk-jekel-748054259/"
+                        class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a>
+                </li>
+                <li><a href="https://www.kaggle.com/hajekel" class="icon brands fa-kaggle"><span
+                            class="label">Kaggle</span></a></li>
+                <li><a href="https://github.com/HAJEKEL" class="icon brands alt fa-github"><span
+                            class="label">GitHub</span></a></li>
+            </ul>
+        </nav>
+
+        <!-- Main -->
+        <div id="main">
+
+            <!-- Featured Post -->
+            <article class="post featured">
+                <header class="major">
+                    <span class="date">April 28, 2023</span>
+                    <h1><a>Pathfinder Prius:<br />
+                        Navigating the Future with ROS-Powered Autonomous Driving</a></h1>
+                </header>
+                <a href="#" class="image fit"><img src="images/prius_project.png" alt="prius_project" /></a>
+
+                <p>In this university assignment, I developed software for autonomous driving
+                    of a Prius vehicle in a simulated test track utilizing the Robot Operating
+                    System (ROS). The Prius was equipped with two primary sensors, a front-facing
+                    camera located behind the windshield and a 360-degree top-mounted LIDAR sensor.
+                    The vehicle's system received the camera images and LIDAR point clouds as ROS topics.
+                </p>
+
+                <p>
+                    The objective of this study was to design a virtual, controllable Prius vehicle that could
+                    detect obstacles and pedestrians using its sensors, and subsequently maneuver autonomously along
+                    a path defined by cones, avoiding all obstacles. Additionally, the vehicle was required to stop
+                    in the presence of pedestrians.
+                </p>
+                <p>
+                    For this study, the university supplied a simulation platform comprised of a virtual vehicle and
+                    environment. To accomplish the autonomous driving task, we implemented three additional ROS
+                    packages as the solution.
+                </p>
+                <div class="row">
+
+
+                    <ul>
+                        <li>As part of the solution, we created an "opencv_person_detector" package that contained a
+                            node capable of detecting 2D bounding boxes around all individuals in a camera image
+                            through
+                            the use of OpenCV.</li>
+                        <li>Additionally, we developed a "pcl_obstacle_detector" package that included a node for
+                            detecting 3D bounding boxes around all barrels present in the LIDAR point cloud through
+                            the
+                            use of Point Cloud Library (PCL).</li>
+                        <li>Finally, we created a "control_barrel_world" package that comprised a node responsible
+                            for
+                            controlling the vehicle. This node subscribed to both the 3D barrel detections and 2D
+                            person
+                            detections, and published control messages to drive the vehicle.</li>
+
+                    </ul>
+
+                </div>
+                <p>
+                    The accompanying illustration showcases the topics and nodes incorporated in the solution.
+                </p>
+                <a href="#" class="image fit"><img src="images/prius_solution.png" alt="prius_project" /></a>
+
+                <p>The source code for this project must be kept confidential. A recording of the functioning simulation
+                    after the implementation of the solution is provided below, albeit with some lag in the display due
+                    to the GIF format.</p>
+                <a href="#" class="image fit"><img src="images/prius_project.gif" alt="prius_project" /></a>
+
+
+                <ul class="actions special">
+                    <li><a href="#" class="button large">View project</a></li>
+                </ul>
+
+            </article>
+
+
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+
+            <section class="split contact">
+                <section class="alt">
+                    <h3>Address</h3>
+                    <p>Delft, Netherlands<br />
+                </section>
+
+                <section>
+                    <h3>Email</h3>
+                    <p><a>hendrikjekel@gmail.com</a></p>
+                </section>
+                <section>
+                    <h3>Social</h3>
+                    <ul class="icons">
+                        <li><a href="https://www.linkedin.com/in/henk-jekel-748054259/"
+                                class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a>
+                        </li>
+                        <li><a href="https://github.com/HAJEKEL" class="icon brands alt fa-github"><span
+                                    class="label">GitHub</span></a></li>
+                    </ul>
+                </section>
+            </section>
+        </footer>
+
+        <!-- Copyright -->
+        <div id="copyright">
+            <ul>
+                <li>Henk Jekel &copy; 2022</li>
+                <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
