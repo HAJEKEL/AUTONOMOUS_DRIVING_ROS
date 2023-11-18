@@ -60,6 +60,4 @@ catkin_make
 To run the solution run the following command lines inside the singularity container:
 
     source devel/setup.sh
-    roslaunch control_barrel_world solution.launch
-##
-Broke the solution just before the deadline when adding comments:( 
+    roslaunch control_barrel_world solution.launch 
